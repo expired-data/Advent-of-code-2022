@@ -1,6 +1,5 @@
 import { maxValue, sumList, sumInventory, solve } from "./problem1";
 import fs from 'fs'
-import path from 'path'
 
 const file = path.join(__dirname, './', 'example-input.txt')
 const exampleData: string = fs.readFileSync(file, "utf8")
