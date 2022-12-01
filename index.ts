@@ -21,7 +21,7 @@ const argv = yargs.option('problem', {
     .option('part', { 
         description: 'Which part of the problem to solve', 
         type: 'number',
-        default: 0
+        default: 1
     })
     .help().alias('help','h').argv;
 
@@ -29,6 +29,6 @@ if(argv.problem && argv.input && problemSolvers[argv.problem]) {
     const file = path.join(__dirname, argv.input)
     const inputData: string = fs.readFileSync(file, "utf8")
 
-    const solution = problemSolvers[argv.problem][argv.part](inputData)
+    const solution = problemSolvers[argv.problem][argv.part - 1](inputData)
     console.log('The solution for this input is: ' + solution)
 }
