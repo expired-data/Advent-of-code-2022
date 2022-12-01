@@ -1,4 +1,4 @@
-const solve = (input: string): number => { 
+const solvePart1 = (input: string): number => { 
     const inventories: string[] = input.split(/\r?\n\r?\n/);    
     const inventorySums: number[] = inventories.map(sumInventory);
 
@@ -15,4 +15,14 @@ const sumList = (nums: number[]): number => nums.reduce((prev: number, cur: numb
 
 const maxValue = (values: number[]): number => values.sort((a,b) => b - a)[0]
 
-export { solve, sumInventory, sumList, maxValue }
+
+const solvePart2 = (input: string): number => {
+    const inventories: string[] = input.split(/\r?\n\r?\n/);   
+    const inventorySums: number[] = inventories.map(sumInventory);
+
+    return sumList(topThree(inventorySums))
+} 
+
+const topThree = (values: number[]): number[] => values.sort((a,b) => b - a).slice(0, 3)
+
+export { solvePart1, solvePart2, sumInventory, sumList, maxValue, topThree }
