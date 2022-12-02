@@ -1,11 +1,13 @@
 import { solvePart1 as solveProblem1Part1, solvePart2 as solveProblem1Part2 } from './Problem 1/problem1'
+import { solvePart1 as solveProblem2Part1 } from './Problem 2/problem2'
 import fs from 'fs'
 import path from 'path'
 
 const yargs = require('yargs');
 
 const problemSolvers: {[problemNumber: number]: [((input: string) => unknown), ((input: string) => unknown)]} = { 
-    1: [solveProblem1Part1, solveProblem1Part2] 
+    1: [solveProblem1Part1, solveProblem1Part2], 
+    2: [solveProblem2Part1, () => {}]
 }
 
 const argv = yargs.option('problem', { 
@@ -31,4 +33,6 @@ if(argv.problem && argv.input && problemSolvers[argv.problem]) {
 
     const solution = problemSolvers[argv.problem][argv.part - 1](inputData)
     console.log('The solution for this input is: ' + solution)
+} else { 
+    console.error("Can't find the problem or invalid inputs")
 }
