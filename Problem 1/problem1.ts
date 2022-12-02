@@ -1,28 +1,31 @@
-const solvePart1 = (input: string): number => { 
-    const inventories: string[] = input.split(/\r?\n\r?\n/);    
-    const inventorySums: number[] = inventories.map(sumInventory);
+const solvePart1 = (input: string): number => {
+  const inventories: string[] = input.split(/\r?\n\r?\n/);
+  const inventorySums: number[] = inventories.map(sumInventory);
 
-    return maxValue(inventorySums);
-}
+  return maxValue(inventorySums);
+};
 
-const sumInventory = (inventory: string): number => { 
-    const calorieValues: number[] = inventory.split(/\r?\n/).map((valString: string): number => Number.parseInt(valString));
+const sumInventory = (inventory: string): number => {
+  const calorieValues: number[] = inventory
+    .split(/\r?\n/)
+    .map((valString: string): number => Number.parseInt(valString));
 
-    return sumList(calorieValues)
-}
+  return sumList(calorieValues);
+};
 
-const sumList = (nums: number[]): number => nums.reduce((prev: number, cur: number): number => prev + cur);
+const sumList = (nums: number[]): number =>
+  nums.reduce((prev: number, cur: number): number => prev + cur);
 
-const maxValue = (values: number[]): number => values.sort((a,b) => b - a)[0]
-
+const maxValue = (values: number[]): number => values.sort((a, b) => b - a)[0];
 
 const solvePart2 = (input: string): number => {
-    const inventories: string[] = input.split(/\r?\n\r?\n/);   
-    const inventorySums: number[] = inventories.map(sumInventory);
+  const inventories: string[] = input.split(/\r?\n\r?\n/);
+  const inventorySums: number[] = inventories.map(sumInventory);
 
-    return sumList(topThree(inventorySums))
-} 
+  return sumList(topThree(inventorySums));
+};
 
-const topThree = (values: number[]): number[] => values.sort((a,b) => b - a).slice(0, 3)
+const topThree = (values: number[]): number[] =>
+  values.sort((a, b) => b - a).slice(0, 3);
 
-export { solvePart1, solvePart2, sumInventory, sumList, maxValue, topThree }
+export { solvePart1, solvePart2, sumInventory, sumList, maxValue, topThree };
