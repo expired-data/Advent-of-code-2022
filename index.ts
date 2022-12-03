@@ -2,7 +2,14 @@ import {
   solvePart1 as solveProblem1Part1,
   solvePart2 as solveProblem1Part2,
 } from "./Problem 1/problem1";
-import { solvePart1 as solveProblem2Part1, solvePart2 as solveProblem2Part2 } from "./Problem 2/problem2";
+import {
+  solvePart1 as solveProblem2Part1,
+  solvePart2 as solveProblem2Part2,
+} from "./Problem 2/problem2";
+import {
+  solvePart1 as solveProblem3Part1,
+  solvePart2 as solveProblem3Part2,
+} from "./Problem 3/problem3";
 import fs from "fs";
 import path from "path";
 
@@ -10,12 +17,13 @@ const yargs = require("yargs");
 
 const problemSolvers: {
   [problemNumber: number]: [
-    (input: string) => unknown,
-    (input: string) => unknown
+    (input: string) => number,
+    (input: string) => number
   ];
 } = {
   1: [solveProblem1Part1, solveProblem1Part2],
   2: [solveProblem2Part1, solveProblem2Part2],
+  3: [solveProblem3Part1, solveProblem3Part2],
 };
 
 const argv = yargs
