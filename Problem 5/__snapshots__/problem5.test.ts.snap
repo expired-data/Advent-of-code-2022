@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseInstructions can parse example instructions 1`] = `
+[
+  [
+    1,
+    2,
+    1,
+  ],
+  [
+    3,
+    1,
+    3,
+  ],
+  [
+    2,
+    2,
+    1,
+  ],
+  [
+    1,
+    1,
+    2,
+  ],
+]
+`;
