@@ -30,6 +30,10 @@ import {
   solvePart1 as solveProblem8Part1,
   solvePart2 as solveProblem8Part2,
 } from "./Problem 8/problem8";
+import {
+  solvePart1 as solveProblem9Part1,
+  solvePart2 as solveProblem9Part2,
+} from "./Problem 9/problem9";
 import fs from "fs";
 import path from "path";
 
@@ -49,6 +53,7 @@ const problemSolvers: {
     6: [solveProblem6Part1, solveProblem6Part2],
     7: [solveProblem7Part1, solveProblem7Part2],
     8: [solveProblem8Part1, solveProblem8Part2],
+    9: [solveProblem9Part1, solveProblem9Part2],
 };
 
 const argv = yargs
